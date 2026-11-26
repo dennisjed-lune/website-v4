@@ -1,0 +1,118 @@
+/* Lune site, version 4. The product pages take the look of the new landing (landing_body.html):
+   white pages, tight large type, light panels in place of the dark sections, soft cards, a mint call to action.
+   This file loads after site.css on every page. The home page markup carries its own inline styles. */
+:root {
+  --bg: #fff; --line: var(--neutral-200); --hair: var(--neutral-100); --r: 12px; --r-lg: 16px; --r-xl: 20px;
+  --panel: #E7F6F1;
+  --card-shadow: 0 1px 2px rgba(7,3,18,.04), 0 18px 40px -22px rgba(0,46,42,.16);
+  --dots: radial-gradient(rgba(0,46,42,0.09) 1px, transparent 1.2px);
+}
+body { background: #fff; }
+
+/* ---- Type: the landing scale ---- */
+.h1--page { font-size: clamp(40px, 4.8vw, 72px); line-height: 0.98; letter-spacing: -0.05em; }
+h2, .h2 { font-size: clamp(34px, 3.8vw, 58px); line-height: 1; letter-spacing: -0.05em; }
+h3, .h3 { font-size: clamp(18px, 1.4vw, 21px); line-height: 1.3; letter-spacing: -0.015em; }
+.points h3 { font-size: clamp(18px, 1.4vw, 21px); }
+/* Labels use the brand face (Plus Jakarta Sans). The code face is only for raw card descriptions. */
+.eyebrow, .tag, .dc__lab, .dc__via, .callout span, .study dt { font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+.party > div::before { font-family: var(--font-sans); }
+.eyebrow::before { border-radius: 50%; width: 6px; height: 6px; }
+.more { font-size: 15px; }
+.more:hover { color: var(--lune-emerald); text-decoration: none; }
+
+/* ---- Header and footer ---- */
+.site-head__row { background: rgba(255,255,255,0.92); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-color: var(--hair); }
+.site-nav a[aria-current="page"] { color: var(--lune-teal); background: var(--neutral-50); font-weight: 600; }
+.site-foot { padding: 48px 0 32px; font-size: 14px; border-top: 1px solid var(--hair); }
+.site-foot__grid { border-top: 0; padding-top: 0; }
+.site-foot__grid > div > b { font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--lune-teal); display: flex; align-items: center; }
+.site-foot__note { border-top: 0; padding-top: 0; font-size: 12px; color: var(--neutral-500); }
+
+/* ---- Sections: no hairlines between them; light panels in place of the dark slides ---- */
+.sec { padding: clamp(64px, 8vw, 120px) 0; }
+.sec + .sec:not(.sec--teal):not(.sec--ink):not(.sec--white) { border-top: 0; }
+.sec--white { background: var(--neutral-25); }
+.sec--teal, .sec--ink { background: var(--panel); color: var(--lune-teal); --line: rgba(0,46,42,0.14); --mut: var(--neutral-600); --soft: var(--neutral-500); margin-inline: 0; border-radius: 0; }
+.sec--teal .serif, .sec--ink .serif { color: var(--lune-teal-700); }
+.sec--teal .eyebrow, .sec--ink .eyebrow, .sec--teal .tag, .sec--ink .tag, .sec--teal .more, .sec--ink .more { color: var(--lune-teal-700); }
+.sec--teal .eyebrow::before, .sec--ink .eyebrow::before { background: var(--lune-emerald); }
+.sec--teal .facts b, .sec--ink .facts b { color: var(--lune-teal); }
+.sec--ink .shot__frame, .sec--teal .shot__frame { background: #fff; }
+.sec--ink :focus-visible, .sec--teal :focus-visible, .cta :focus-visible { outline-color: var(--lune-teal-700); }
+.drift { color: var(--lune-teal); }
+.sec:has(> .wrap > .next) { padding: clamp(28px, 3vw, 44px) 0; }
+
+/* ---- Lists and cards ---- */
+.card p, .points p { font-size: 15px; line-height: 1.55; }
+.card--muted, .card.form, .card.study { background: #fff; border: 1px solid var(--hair); border-radius: var(--r-xl); box-shadow: var(--card-shadow); }
+.card--muted { background: var(--neutral-25); box-shadow: none; }
+.facts li { font-size: 15px; }
+.facts li::before { border-radius: 50%; }
+.kv b { font-size: 15px; }
+.kv span { font-size: 14px; }
+.party b { font-size: clamp(18px, 1.4vw, 21px); }
+.map { border-color: var(--hair); border-radius: var(--r-lg); box-shadow: 0 30px 60px -30px rgba(0,46,42,.16); }
+.snip { background: var(--neutral-25); border-color: var(--hair); border-radius: var(--r-xl); }
+
+/* ---- Proof ---- */
+.stats > div { border-top: 1px solid var(--line); padding: 32px 0 24px; gap: 6px; }
+.stats b { font-size: clamp(40px, 5vw, 64px); line-height: 1; }
+.stats span { color: var(--neutral-600); font-size: 16px; }
+.quote { background: var(--neutral-25); border: 1px solid var(--hair); border-radius: var(--r-xl); padding: 32px; gap: 24px; }
+.quote blockquote { font-size: clamp(20px, 1.8vw, 26px); line-height: 1.35; letter-spacing: -0.015em; font-weight: 500; }
+.quote figcaption img { height: 32px; }
+.case { border-color: var(--hair); border-radius: var(--r-xl); padding: 28px; gap: 16px; }
+.case b { font-size: 18px; letter-spacing: 0; line-height: 1.4; }
+.badges span, .badges span:first-child { font-family: inherit; font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--neutral-600); padding: 8px 14px; margin: 0; border: 1px solid var(--line); border-radius: 999px; }
+
+/* ---- Product screens: a light stage with the dot grid of the landing journey ---- */
+.shot__frame, .phones { border-color: var(--hair); border-radius: var(--r-xl); background: var(--dots) 0 0 / 28px 28px, var(--neutral-25); }
+.sec--white .shot__frame, .sec--white .phones { background: var(--dots) 0 0 / 28px 28px, #fff; }
+.shot__frame > img { box-shadow: var(--card-shadow); border: 1px solid var(--hair); }
+.ui { border: 1px solid var(--hair); border-radius: 14px; box-shadow: 0 1px 2px rgba(7,3,18,.04), 0 24px 48px -18px rgba(0,46,42,.2); }
+.shot__bar { background: #fff; color: var(--lune-teal); border: 1px solid var(--hair); }
+.shot__bar::before { background: var(--lune-emerald); }
+.dev { background: #12211E; box-shadow: 0 40px 80px -34px rgba(0,46,42,.55), inset 0 0 0 1.5px #2A3A36; }
+.dev:not(.dev--shot)::after { background: #12211E; }
+
+/* ---- Raw card descriptions: light rows, as in the landing Enrich chapter ---- */
+.rawtable { background: transparent; color: var(--lune-teal); padding: 0; gap: 10px; }
+.rawrow { background: #fff; border: 1px solid var(--hair); border-radius: 16px; box-shadow: var(--card-shadow); }
+.rawrow__raw { font-size: 12.5px; letter-spacing: 0.03em; color: var(--neutral-500); }
+.rawrow__arrow { color: var(--lune-emerald); }
+.rawrow__out img { box-shadow: 0 0 0 1px var(--hair); }
+.rawrow__out span { color: var(--neutral-500); }
+.dc__in { background: var(--neutral-25); border: 1px solid var(--hair); }
+.dc__in .dc__lab { color: var(--neutral-500); }
+.dc__in code { color: var(--neutral-700); }
+.dc__scan { background: linear-gradient(90deg, transparent, rgba(16,163,127,0.16), transparent); }
+.callout { background: #fff; color: var(--lune-teal); border: 1px solid var(--lune-emerald); box-shadow: 0 20px 40px -16px rgba(16,163,127,.4); }
+.callout span { color: var(--lune-teal-700); }
+
+/* ---- Call to action: the mint panel ---- */
+.cta { background: var(--lune-mint); color: var(--lune-teal); border-radius: 24px; padding: clamp(32px, 5vw, 64px); grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+.cta::before { display: none; }
+.cta h2 { font-size: clamp(36px, 4.4vw, 64px); line-height: 0.98; letter-spacing: -0.05em; }
+.cta p { font-size: 17px; color: var(--lune-teal); }
+.cta .btn--ink { background: var(--lune-ink); color: #fff; }
+.cta .btn--ink:hover { background: var(--lune-teal); color: #fff; }
+.cta .btn--ink::after { background-color: var(--lune-emerald); }
+.cta .btn--ghost-ink { color: var(--lune-teal); border-color: var(--lune-teal); }
+.cta .btn--ghost-ink:hover { color: var(--lune-teal); border-color: var(--lune-teal); background: rgba(255,255,255,0.4); }
+main > .sec:has(> .wrap > .cta) { padding: 0 0 clamp(48px, 6vw, 96px); }
+main > .sec:has(> .wrap > .cta) > .wrap { padding: 0 var(--pad); max-width: 1400px; }
+
+/* ---- Scroll entrance for graphics (pages.js). It replaces the timed reveal on these elements. ---- */
+.sx-on .sx, .sx-on .sx.rv, .sx-on .sx.rv.in { transition: none; will-change: transform, opacity; transform-origin: 50% 60%; }
+.sx-on .sx:not(.sx-done) { opacity: 0; }
+.sx-on .sx.sx-done { opacity: 1; transform: none; filter: none; will-change: auto; }
+
+/* Graphics that slide in from the side must not make the page scroll sideways. */
+html { overflow-x: clip; }
+.dc__via { letter-spacing: 0; font-size: 13px; }
+
+/* Home hero card scene: the "From your bank" chip is white like the other chips. */
+.fl--raw { background: rgba(255,255,255,0.97); border-color: var(--neutral-100); }
+.fl--raw .dc__lab { color: var(--neutral-500); }
+.fl--raw code { color: var(--neutral-700); }

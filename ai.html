@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI assistant | Lune</title>
+<meta name="description" content="A conversational assistant inside Expenses and Cashflow. It answers from enriched transactions and shows Pulse offers that match spend.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="ds/fonts/PlusJakartaSans-Latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="ds/tokens/fonts.css">
+<link rel="stylesheet" href="ds/tokens/colors.css">
+<link rel="stylesheet" href="ds/tokens/typography.css">
+<link rel="stylesheet" href="ds/tokens/spacing.css">
+<link rel="stylesheet" href="ds/tokens/base.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="v4.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head" data-nav>
+  <div class="wrap site-head__row">
+    <a class="brand" href="index.html"><img src="img/lune-logo.svg" alt="Lune" width="109" height="28"></a>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><a href="enrich.html">Enrich</a><a href="analytics.html">Analytics</a><a href="expenses.html">Expenses</a><a href="cashflow.html">Cashflow</a><a href="pulse.html">Pulse</a><a href="ai.html" aria-current="page">AI</a><a href="customers.html">Customers</a></nav>
+    <div class="site-head__end">
+      <a class="login" href="https://lunehub.lunedata.io/auth/login">Log in</a>
+      <a class="btn btn--dark btn--sm" href="contact.html">Talk to us</a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">≡</button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="hero"><div class="wrap hero__grid">
+  <div class="hero__copy"><h1 class="h1--page">Customers ask about their money. <span class="serif">The assistant answers.</span></h1><p class="lead">A conversational assistant runs inside Expenses and Cashflow in your app. It answers from the customer's enriched transactions and shows Pulse offers that match their spend.</p><div class="btns"><a class="btn btn--primary" href="contact.html">Talk to us</a><a class="btn btn--ghost" href="https://docs.lunedata.io/pfm-sdk/" target="_blank" rel="noopener">SDK docs ↗</a></div></div>
+  <figure class="shot demo demo--phones" data-demo="ai" data-parallax="0.05"><div class="demo__v" data-v="1"><div class="shot__frame"><div class="ui-wrap"><div class="dv stage" data-steps="700,1500,3000,2600,4400" role="img" aria-label="A customer asks about shopping spend. The assistant answers and shows a cashback offer from the top merchant"><div class="unit"><div class="dev"><div class="dev__scr"><div class="app chat"><span class="app__time">9:41</span>
+<div class="app__top"><b>Assistant</b><span class="app__pill">Expenses</span></div>
+<p class="chat__me fx at1">How much did I spend on shopping this month?</p>
+<div class="chat__bot fx at2"><p>You spent <b>AED 1,840</b> on shopping this month. Your top merchants are Level Shoes and IKEA.</p>
+<div class="chat__row"><img src="img/logos/levelshoes.png" alt=""><span><b>Level Shoes</b><i>Shopping › Clothing</i></span><em>AED 1,032.00</em></div>
+<div class="chat__row"><img src="img/logos/ikea.png" alt=""><span><b>IKEA</b><i>Shopping › Furniture</i></span><em>AED 645.00</em></div></div>
+<div class="chat__bot chat__offer fx at3"><span class="chat__tag">Offer for you</span>
+<div class="chat__row"><img src="img/logos/levelshoes.png" alt=""><span><b>10% cashback</b><i>At Level Shoes, with your card</i></span></div>
+<span class="chat__btn"><i>Activate offer</i><i>Offer activated</i><span class="tap tap--btn"></span></span></div>
+<p class="chat__bot chat__done fx at4">Done. Pay with your card at Level Shoes to earn the cashback.</p>
+<div class="chat__chips"><i>Top merchants</i><i>Compare months</i><i>Offers for me</i></div>
+<div class="chat__input"><span>Ask about your spending</span><u></u></div>
+</div></div></div><div class="pop pop--l2 at2"><span class="pop__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></span><span><b>Answer from your data</b><i>Real merchant names</i></span></div><div class="pop pop--r3 at3"><span class="pop__i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l1.5-5h13L20 9"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></span><span><b>Pulse offer</b><i>Matches shopping spend</i></span></div></div></div></div></div></div></figure>
+</div></section>
+
+<section class="sec sec--white"><div class="wrap stack">
+<div class="head"><h2>Each question gets an answer from real payments.</h2><p class="lead">Four example questions.</p></div>
+<div class="snips"><div class="snip"><div class="snip__scr chat" role="img" aria-label="How much did I spend on shopping this month?"><p class="chat__me">How much did I spend on shopping this month?</p><div class="chat__bot"><p>You spent <b>AED 1,840</b> on shopping this month.</p><div class="chat__row"><img src="img/logos/levelshoes.png" alt=""><span><b>Level Shoes</b><i>Shopping › Clothing</i></span><em>AED 1,032.00</em></div><div class="chat__row"><img src="img/logos/ikea.png" alt=""><span><b>IKEA</b><i>Shopping › Furniture</i></span><em>AED 645.00</em></div></div></div></div><div class="snip"><div class="snip__scr chat" role="img" aria-label="Where do I spend the most?"><p class="chat__me">Where do I spend the most?</p><div class="chat__bot"><p>Your top three merchants this month:</p><div class="chat__row"><img src="img/logos/carrefour.png" alt=""><span><b>Carrefour</b><i>Groceries › Supermarket</i></span><em>AED 1,240.00</em></div><div class="chat__row"><img src="img/logos/levelshoes.png" alt=""><span><b>Level Shoes</b><i>Shopping › Clothing</i></span><em>AED 1,032.00</em></div><div class="chat__row"><img src="img/logos/ikea.png" alt=""><span><b>IKEA</b><i>Shopping › Furniture</i></span><em>AED 645.00</em></div></div></div></div><div class="snip"><div class="snip__scr chat" role="img" aria-label="Did I spend more than last month?"><p class="chat__me">Did I spend more than last month?</p><div class="chat__bot"><p>No. You spent <b>AED 6,808</b> so far this month. That is <b>AED 187 less</b> than last month.</p><div class="chat__cmp"><span>This month<u style="--w:97%"></u><em>AED 6,808</em></span><span>Last month<u class="was" style="--w:100%"></u><em>AED 6,995</em></span></div></div></div></div><div class="snip"><div class="snip__scr chat" role="img" aria-label="Are there offers for me?"><p class="chat__me">Are there offers for me?</p><div class="chat__bot"><p>Yes. You spent <b>AED 1,032</b> at Level Shoes this month.</p></div><div class="chat__bot chat__offer"><span class="chat__tag">Offer for you</span><div class="chat__row"><img src="img/logos/levelshoes.png" alt=""><span><b>10% cashback</b><i>At Level Shoes, with your card</i></span></div><span class="chat__btn"><i>Activate offer</i></span></div></div></div></div>
+</div></section>
+
+<section class="sec "><div class="wrap stack">
+<div class="head"><h2>The assistant uses products your bank controls.</h2></div>
+<div class="cols cols--4">
+<div class="card"><h3>In your app</h3><p>The assistant runs in the Lune SDK, inside Expenses and Cashflow. It uses your colours.</p></div>
+<div class="card"><h3>The customer's own data</h3><p>Each answer comes from that customer's enriched transactions.</p></div>
+<div class="card"><h3>Offers you approve</h3><p>The assistant shows Pulse offers. Your bank approves each offer.</p></div>
+<div class="card"><h3>Merchant-funded rewards</h3><p>The merchant funds each reward. Your bank uses no rewards budget.</p></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap"><div class="cta"><h2>See the AI assistant in a sample bank app.</h2><div class="cta__end"><p>Contact sales for a live demo of the assistant on sample data.</p>
+<div class="btns"><a class="btn btn--ink" href="contact.html">Talk to us</a><a class="btn btn--ghost-ink" href="https://docs.lunedata.io/pfm-sdk/" target="_blank" rel="noopener">SDK docs ↗</a></div></div></div></div></section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap site-foot__grid">
+    <div><a class="brand" href="index.html"><img src="img/lune-logo.svg" alt="Lune" width="94" height="24"></a><span class="muted" style="min-height:36px">© 2026 Lune Technologies</span>
+      <a href="lune-privacy/">Privacy policy</a><a href="terms/">Terms</a><a href="cookie/">Cookie policy</a></div>
+    <div><b>Products</b><a href="enrich.html">Enrich</a><a href="analytics.html">Analytics</a><a href="expenses.html">Expenses</a><a href="cashflow.html">Cashflow</a><a href="ai.html">AI assistant</a><a href="pulse.html">Pulse</a></div>
+    <div><b>Pulse</b><a href="pulse.html#how">How Pulse works</a><a href="pulse.html#bank">For banks</a><a href="pulse.html#customer">For cardholders</a><a href="pulse.html#results">Results</a></div>
+    <div><b>Company</b><a href="customers.html">Customers</a><a href="blog/">Blog</a><a href="contact.html">Contact sales</a></div>
+    <div><b>Developers</b><a href="https://docs.lunedata.io/enrichment/enrichment-api" target="_blank" rel="noopener">Enrichment API ↗</a><a href="https://docs.lunedata.io/pfm-sdk/" target="_blank" rel="noopener">Mobile SDK ↗</a><a href="https://lunehub.lunedata.io/auth/login">Log in to LuneHub</a></div>
+  </div>
+  <div class="wrap"><p class="site-foot__note">Product screens on this site show sample data.</p></div>
+</footer>
+<script src="site.js"></script>
+<script src="pages.js"></script>
+</body>
+</html>

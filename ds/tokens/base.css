@@ -1,0 +1,41 @@
+/* ============================================================
+   Lune — base / reset layer
+   A light, opinionated normalize that wires the brand defaults
+   onto bare HTML. Optional for consumers but keeps specimens and
+   UI kits consistent.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  font-weight: var(--weight-regular);
+  color: var(--text-primary);
+  background: var(--bg-canvas);
+}
+
+h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
+
+a { color: var(--text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+::selection { background: var(--lune-mint); color: var(--lune-teal); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+img, svg { display: block; max-width: 100%; }
+
+code, pre, kbd { font-family: var(--font-mono); }

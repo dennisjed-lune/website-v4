@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enrich | Real-time transaction enrichment API | Lune</title>
+<meta name="description" content="Enrich returns the merchant, logo and category for each card transaction as it happens.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="ds/fonts/PlusJakartaSans-Latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="ds/tokens/fonts.css">
+<link rel="stylesheet" href="ds/tokens/colors.css">
+<link rel="stylesheet" href="ds/tokens/typography.css">
+<link rel="stylesheet" href="ds/tokens/spacing.css">
+<link rel="stylesheet" href="ds/tokens/base.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="v4.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head" data-nav>
+  <div class="wrap site-head__row">
+    <a class="brand" href="index.html"><img src="img/lune-logo.svg" alt="Lune" width="109" height="28"></a>
+    <nav class="site-nav" id="site-nav" aria-label="Main"><a href="enrich.html" aria-current="page">Enrich</a><a href="analytics.html">Analytics</a><a href="expenses.html">Expenses</a><a href="cashflow.html">Cashflow</a><a href="pulse.html">Pulse</a><a href="ai.html">AI</a><a href="customers.html">Customers</a></nav>
+    <div class="site-head__end">
+      <a class="login" href="https://lunehub.lunedata.io/auth/login">Log in</a>
+      <a class="btn btn--dark btn--sm" href="contact.html">Talk to us</a>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">≡</button>
+    </div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<section class="hero"><div class="wrap hero__grid">
+  <div class="hero__copy"><h1 class="h1--page">Every card payment, named: <span class="serif">merchant, logo and category.</span></h1><p class="lead">Your core banking system sends a raw card description. Enrich returns the merchant, logo and category as the payment happens.</p><div class="btns"><a class="btn btn--primary" href="contact.html">Talk to us</a><a class="btn btn--ghost" href="https://sales.lunedata.io" target="_blank" rel="noopener">Try Enrich live ↗</a><a class="btn btn--ghost" href="https://docs.lunedata.io/enrichment/enrichment-api" target="_blank" rel="noopener">Read the API docs ↗</a></div></div>
+  <figure class="shot demo " data-demo="enrich" data-parallax="0.05"><div class="demo__v" data-v="1"><div class="shot__frame"><div class="ui-wrap"><div class="dv dv-decode" data-steps="900,1000,800,700,2600" data-hook="tx" role="img" aria-label="One card description becomes a merchant, a logo and a category"><div class="ui dc">
+<div class="dc__in"><span class="dc__lab">From your bank</span><code data-f="raw" data-type>POS PUR 448812 LVL SHS DXB MALL 00AE</code><i class="dc__scan"></i></div>
+<div class="dc__via"><i></i><span>Enrich</span></div>
+<div class="dc__out">
+<div class="dc__f dc__f--1 ui__key"><span class="dc__lab">Merchant and logo</span><span class="ui__brand"><img data-f="logo" src="img/logos/levelshoes.png" alt=""><b data-f="merchant">Level Shoes</b></span></div>
+<div class="dc__f dc__f--2"><span class="dc__lab">Category</span><b data-f="cat">Shopping › Clothing</b></div>
+<div class="dc__f dc__f--3"><span class="dc__lab">Recurring</span><b data-f="rec">No</b></div>
+</div><p class="ui__note">Enrich names the merchant behind each card description.</p></div></div></div></div></div></figure>
+</div></section>
+
+<section class="sec "><div class="wrap stack">
+<div class="head"><h2>Enrich reads the card descriptions that customers cannot read.</h2><p class="lead">Seven card payments from seven countries. Enrich returns each result in real time.</p></div>
+<div class="rawtable"><div class="rawrow"><span class="rawrow__raw" data-ux-ignore="long-number-unchunked">AMZ*MKTPL UK 2R45T LON GB 826</span><span class="rawrow__arrow">→</span>
+<span class="rawrow__out"><img src="img/logos/amazon.png" alt=""><span><b>Amazon</b><span><em>Shopping › Online marketplaces</em> · GBP 42.99</span></span></span></div><div class="rawrow"><span class="rawrow__raw" data-ux-ignore="long-number-unchunked">POS 551204 MAF HYPMKT RYD PARK 682</span><span class="rawrow__arrow">→</span>
+<span class="rawrow__out"><img src="img/logos/carrefour.png" alt=""><span><b>Carrefour · كارفور</b><span><em>Groceries › Supermarkets</em> · SAR 214.50</span></span></span></div><div class="rawrow"><span class="rawrow__raw" data-ux-ignore="long-number-unchunked">CB INDITEX 3315 PARIS HAUSSM FR</span><span class="rawrow__arrow">→</span>
+<span class="rawrow__out"><img src="img/logos/zara.png" alt=""><span><b>Zara</b><span><em>Shopping › Clothing</em> · EUR 89.95</span></span></span></div><div class="rawrow"><span class="rawrow__raw" data-ux-ignore="long-number-unchunked">UBR* PENDING 8005928996 NY 840</span><span class="rawrow__arrow">→</span>
+<span class="rawrow__out"><img src="img/logos/uber.png" alt=""><span><b>Uber</b><span><em>Transportation › Ride hailing</em> · USD 31.40</span></span></span></div><div class="rawrow"><span class="rawrow__raw" data-ux-ignore="long-number-unchunked">IKANO PTE TMPNS 0291 SGP 702</span><span class="rawrow__arrow">→</span>
+<span class="rawrow__out"><img src="img/logos/ikea.png" alt=""><span><b>IKEA · 宜家家居</b><span><em>Home › Furniture</em> · SGD 189.00</span></span></span></div><div class="rawrow"><span class="rawrow__raw" data-ux-ignore="long-number-unchunked">SBUX SHIBUYA TKY JP 392</span><span class="rawrow__arrow">→</span>
+<span class="rawrow__out"><img src="img/logos/starbucks.png" alt=""><span><b>Starbucks · スターバックス</b><span><em>Dining › Cafés</em> · JPY 650</span></span></span></div><div class="rawrow"><span class="rawrow__raw" data-ux-ignore="long-number-unchunked">NF* 8665797172 LOS GATOS 00012</span><span class="rawrow__arrow">→</span>
+<span class="rawrow__out"><img src="img/logos/netflix.png" alt=""><span><b>Netflix · نتفليكس</b><span><em>Entertainment › Streaming</em> · Recurring · AED 56.99</span></span></span></div></div>
+</div></section>
+
+<section class="sec sec--white"><div class="wrap stack">
+<div class="stats">
+<div><b>1.5 bn+</b><span>Transactions enriched each year</span></div>
+<div><b>99%</b><span>Categorisation coverage</span></div>
+<div><b>121+</b><span>Spend subcategories</span></div></div>
+</div></section>
+
+<section class="sec "><div class="wrap stack">
+<div class="head"><h2>One API call returns four fields for each transaction.</h2></div>
+<div class="cols cols--4">
+<div class="card"><h3>Merchant name</h3><p>The name your customer knows, in all languages, from local and global merchant databases.</p></div>
+<div class="card"><h3>Merchant logo</h3><p>A logo for each merchant, updated every day. Statements and apps show names that customers know.</p></div>
+<div class="card"><h3>Category and subcategory</h3><p>19 consumer categories, each with subcategories. Examples are Groceries, Dining, Travel and Income.</p></div>
+<div class="card"><h3>Recurring transactions</h3><p>Lune finds transactions that repeat. Examples are payments such as subscriptions and income such as a salary.</p></div>
+</div>
+</div></section>
+
+<section class="sec sec--white"><div class="wrap stack">
+<div class="feature feature--wide"><div class="feature__copy"><h2 style="font-size:clamp(26px,2.6vw,38px)">Your team sees each enriched transaction.</h2>
+<p class="lead">LuneHub is the Lune portal for bank teams. It lists each transaction with its raw description and its enriched result.</p><ul class="facts"><li><b>Search</b> by raw description or transaction ID.</li><li><b>Compare</b> the raw description with the brand and category.</li><li><b>Flag</b> a result that looks wrong.</li></ul></div><figure class="shot"><div class="shot__frame">
+<img src="img/product/lunehub-transactions-list.jpg" alt="LuneHub transactions list with raw description, brand, category, date and amount" loading="lazy"></div></figure></div>
+</div></section>
+
+<section class="sec "><div class="wrap stack">
+<div class="head"><h2>Certified, audited and hosted in the UAE and Saudi Arabia.</h2></div>
+<div class="cols cols--4">
+<div class="card"><h3>ISO 27001</h3><p>Certified information security management.</p></div>
+<div class="card"><h3>SOC 2 Type II</h3><p>Independent audit of security controls.</p></div>
+<div class="card"><h3>Audit logs</h3><p>Lune logs every enrichment API call.</p></div>
+<div class="card"><h3>Regional hosting</h3><p>Deployments in the UAE and Saudi Arabia, with disaster recovery.</p></div>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap"><div class="next"><span>The next Lune product</span><a href="analytics.html">Analytics →</a></div></div></section>
+
+<section class="sec"><div class="wrap"><div class="cta"><h2>See Enrich on your own transactions.</h2><div class="cta__end"><p>Contact sales for a live demo on a sample of your transactions. Or enrich a sample feed in your browser now.</p>
+<div class="btns"><a class="btn btn--ink" href="contact.html">Talk to us</a><a class="btn btn--ghost-ink" href="https://sales.lunedata.io" target="_blank" rel="noopener">Try Enrich live ↗</a></div></div></div></div></section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap site-foot__grid">
+    <div><a class="brand" href="index.html"><img src="img/lune-logo.svg" alt="Lune" width="94" height="24"></a><span class="muted" style="min-height:36px">© 2026 Lune Technologies</span>
+      <a href="lune-privacy/">Privacy policy</a><a href="terms/">Terms</a><a href="cookie/">Cookie policy</a></div>
+    <div><b>Products</b><a href="enrich.html">Enrich</a><a href="analytics.html">Analytics</a><a href="expenses.html">Expenses</a><a href="cashflow.html">Cashflow</a><a href="ai.html">AI assistant</a><a href="pulse.html">Pulse</a></div>
+    <div><b>Pulse</b><a href="pulse.html#how">How Pulse works</a><a href="pulse.html#bank">For banks</a><a href="pulse.html#customer">For cardholders</a><a href="pulse.html#results">Results</a></div>
+    <div><b>Company</b><a href="customers.html">Customers</a><a href="blog/">Blog</a><a href="contact.html">Contact sales</a></div>
+    <div><b>Developers</b><a href="https://docs.lunedata.io/enrichment/enrichment-api" target="_blank" rel="noopener">Enrichment API ↗</a><a href="https://docs.lunedata.io/pfm-sdk/" target="_blank" rel="noopener">Mobile SDK ↗</a><a href="https://lunehub.lunedata.io/auth/login">Log in to LuneHub</a></div>
+  </div>
+  <div class="wrap"><p class="site-foot__note">Product screens on this site show sample data.</p></div>
+</footer>
+<script src="site.js"></script>
+<script src="pages.js"></script>
+</body>
+</html>

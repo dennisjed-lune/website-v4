@@ -1,0 +1,132 @@
+/* ============================================================
+   Lune — Color tokens
+   ------------------------------------------------------------
+   Source of truth: Lune UI Library + Category Icons (Figma) and
+   the Lune logo suite. Primary is emerald #10A37F (the crescent),
+   anchored by deep teal #002E2A and the near-black "ink" #070312.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ---- */
+  --lune-emerald:      #10A37F;  /* primary — the crescent / accent */
+  --lune-teal:         #002E2A;  /* deep forest teal — wordmark, dark surfaces */
+  --lune-teal-700:     #0A634D;  /* mid teal — category-icon green */
+  --lune-mint:         #99F2AC;  /* bright mint — success, highlights */
+  --lune-ink:          #070312;  /* near-black aubergine — dark canvas */
+  --lune-sea:          #469A93;  /* muted sea green — secondary accent */
+
+  /* ---- Emerald ramp (primary, from Figma opacity steps) ---- */
+  --primary-100:       #10A37F;
+  --primary-90:        rgba(16,163,127,0.90);
+  --primary-80:        rgba(16,163,127,0.80);
+  --primary-70:        rgba(16,163,127,0.70);
+  --primary-60:        rgba(16,163,127,0.60);
+  --primary-50:        rgba(16,163,127,0.50);
+  --primary-40:        rgba(16,163,127,0.40);
+  --primary-30:        rgba(16,163,127,0.30);
+  --primary-20:        rgba(16,163,127,0.20);
+  --primary-10:        rgba(16,163,127,0.10);
+
+  /* ---- Neutral ramp (cool, faintly teal-tinted greys) ---- */
+  --neutral-0:         #FFFFFF;
+  --neutral-25:        #F7F9F8;
+  --neutral-50:        #EEF2F1;
+  --neutral-100:       #E2E8E6;
+  --neutral-200:       #C9D3D0;
+  --neutral-300:       #A7B4B0;
+  --neutral-400:       #7E8E89;
+  --neutral-500:       #5C6B66;
+  --neutral-600:       #44524E;
+  --neutral-700:       #2E3A36;
+  --neutral-800:       #1B2421;
+  --neutral-900:       #0E1513;
+  --neutral-950:       #070312;
+
+  /* ---- Status (from the Figma status-pill set) ---- */
+  --status-success:    #99F2AC;  /* "Completed" */
+  --status-success-ink:#063D1B;
+  --status-warning:    #FBDA7D;  /* "Under Review" */
+  --status-warning-ink:#5A4205;
+  --status-info:       #5A9CB5;  /* informational (category palette) */
+  --status-info-ink:   #0C3543;
+  --status-error:      #F26076;  /* declined / error (category palette) */
+  --status-error-ink:  #5C0C18;
+
+  /* ---- Category accent hues (from Category Icons "Colours") ---- */
+  --cat-dining:        #FF7444;
+  --cat-grocery:       #E76F2E;
+  --cat-shopping:      #F26076;
+  --cat-wellness:      #F49BAB;
+  --cat-transport:     #5A9CB5;
+  --cat-travel:        #6F8F72;
+  --cat-financial:     #3852B4;
+  --cat-savings:       #A594F9;
+  --cat-income:        #0A634D;
+  --cat-household:     #C4A484;
+  --cat-student:       #B7BDF7;
+  --cat-misc:          #758A93;
+
+  /* ============================================================
+     Semantic aliases — light theme (default)
+     ============================================================ */
+  --bg-canvas:         var(--neutral-25);
+  --bg-surface:        var(--neutral-0);
+  --bg-raised:         var(--neutral-0);
+  --bg-sunken:         var(--neutral-50);
+  --bg-inverse:        var(--lune-ink);
+
+  --surface-card:      var(--neutral-0);
+  --surface-muted:     var(--neutral-50);
+  --surface-emerald:   var(--primary-10);
+
+  --text-primary:      var(--lune-teal);
+  --text-secondary:    var(--neutral-600);
+  --text-tertiary:     var(--neutral-400);
+  --text-on-emerald:   var(--neutral-0);
+  --text-on-inverse:   var(--neutral-0);
+  --text-link:         var(--lune-emerald);
+
+  --border-subtle:     var(--neutral-100);
+  --border-default:    var(--neutral-200);
+  --border-strong:     var(--neutral-300);
+  --border-emerald:    var(--lune-emerald);
+
+  --accent:            var(--lune-emerald);
+  --accent-hover:      #0E9173;
+  --accent-press:      #0B7C62;
+  --focus-ring:        rgba(16,163,127,0.35);
+}
+
+/* ============================================================
+   Dark theme — set data-theme="dark" on a wrapper or <html>
+   The Lune cover/cover-page use the ink canvas with white type
+   and emerald accents.
+   ============================================================ */
+[data-theme="dark"] {
+  --bg-canvas:         var(--lune-ink);
+  --bg-surface:        #110B1F;
+  --bg-raised:         #181023;
+  --bg-sunken:         #0B0716;
+  --bg-inverse:        var(--neutral-0);
+
+  --surface-card:      #14101F;
+  --surface-muted:     #1B1528;
+  --surface-emerald:   rgba(16,163,127,0.16);
+
+  --text-primary:      var(--neutral-0);
+  --text-secondary:    #B8B2C4;
+  --text-tertiary:     #7C7689;
+  --text-on-emerald:   var(--lune-ink);
+  --text-on-inverse:   var(--lune-teal);
+  --text-link:         var(--lune-mint);
+
+  --border-subtle:     rgba(255,255,255,0.08);
+  --border-default:    rgba(255,255,255,0.14);
+  --border-strong:     rgba(255,255,255,0.24);
+  --border-emerald:    var(--lune-emerald);
+
+  --accent:            var(--lune-emerald);
+  --accent-hover:      #2BB996;
+  --accent-press:      #46A893;
+  --focus-ring:        rgba(153,242,172,0.40);
+}

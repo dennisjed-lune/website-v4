@@ -1,0 +1,19 @@
+/* Home page (landing). The markup in landing_body.html carries its own inline styles.
+   These rules keep the shared site.css from changing it. */
+.lp { color: var(--lune-teal); font-size: 14px; line-height: 1.5; }
+.lp :where(h3) { line-height: inherit; letter-spacing: normal; text-wrap: wrap; }
+.lp :where(h1, h2, h3, p, figure, blockquote) { margin: 0; }
+.lp a { color: var(--lune-teal-700); text-decoration: none; }
+.lp a:hover { color: var(--lune-emerald); text-decoration: none; }
+.lp .lift:hover { translate: 0 -6px; scale: 1.03; }
+.site-head[data-nav] { transition: transform .7s cubic-bezier(.16,1,.3,1), opacity .5s ease; }
+@media (prefers-reduced-motion: reduce) { .lp .lift { transition: none !important; } .lp .lift:hover { translate: none; scale: none; } }
+body:has(.lp) { background: #fff; }
+/* Text links in the landing get a 44px tap area. */
+.lp a[style*="font-weight:600;font-size:15px"] { display: inline-flex; align-items: center; min-height: 44px; }
+/* Narrow screens: the product marker moves to the top left as one compact row, clear of the stage copy and links. */
+@media (max-width: 859px) {
+  .lp [data-pill] { bottom: auto !important; top: 12px; left: 12px !important; display: flex !important; align-items: center; gap: 10px !important; padding: 8px 12px !important; min-width: 0 !important; }
+  .lp [data-pill] > div { width: 72px; }
+  .lp [data-pill] b { font-size: 14px !important; }
+}
