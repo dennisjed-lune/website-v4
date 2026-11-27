@@ -309,7 +309,7 @@ rawrows = "".join(f"""<div class="rawrow"><span class="rawrow__raw" data-ux-igno
 <span class="rawrow__out"><img src="img/logos/{lg}" alt=""><span><b>{e(m)}{f' · {loc}' if loc else ''}</b><span><em>{cat}</em>{' · ' + city if city else ''} · {amt}</span></span></span></div>""" for r, lg, m, loc, cat, city, amt in RAW)
 
 ENRICH = f"""{hero("Enrich", 'Every card payment, named: <span class="serif">merchant, logo and category.</span>',
- "Your core banking system sends a raw card description. Enrich returns the merchant, logo and category as the payment happens.",
+ "Your core banking system sends a raw card description. AI-assisted Enrich returns the merchant, logo and category as the payment happens.",
  BTN_TALK + BTN_LIVE + f'<a class="btn btn--ghost" href="{DOCS_API}" target="_blank" rel="noopener">Read the API docs ↗</a>', ENRICH_DEMO)}
 
 {sec(head("Sample transactions", "Enrich reads the card descriptions that customers cannot read.", "Seven card payments from seven countries. Enrich returns each result in real time.") + f'''
@@ -471,11 +471,11 @@ CASHFLOW = f"""{hero("Cashflow", 'Show customers money in <span class="serif">ag
 PULSE_H1 = "Rewards under your bank's name. " + '<span class="serif">Merchants pay.</span>'
 BTN_HOW = '<a class="btn btn--ghost" href="#how">See how it works</a>'
 PULSE = f"""{hero("Pulse", PULSE_H1,
- "Pulse is a rewards programme for your customers. Merchants fund the offers. Lune targets each offer with your enriched spend data. Your bank approves them.", BTN_TALK + BTN_HOW, PULSE_DEMO)}
+ "Pulse is a rewards programme for your customers. Merchants fund the offers. An AI recommendation engine shows each customer the offers that fit their spend. Your bank approves them.", BTN_TALK + BTN_HOW, PULSE_DEMO)}
 
 {sec(head("Why card managers use Pulse", "Customers earn with your card. Merchants pay for the rewards.") + f'''
 <div class="cols">
-{card("Targeting", "Lune targets each offer", "Lune builds each audience from your enriched transactions. The offer reaches the customers who match the goal.")}
+{card("Targeting", "AI recommends each offer", "Lune builds each audience from your enriched transactions. An AI recommendation engine shows each customer the offers that fit their spend.")}
 {card("Card spend", "Customers earn only with your card", "A customer activates an offer in your app. The customer then earns on purchases with your card.")}
 {card("Cost", "Merchants fund each reward", "The merchant sets the budget, the cashback rate and the cap. Your bank needs no rewards budget.")}
 {card("Control", "Your bank approves each offer", "Your team sees the terms, the stores and the audience. Your team chooses the cards that can earn.")}
