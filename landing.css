@@ -45,3 +45,5 @@ body:has(.lp) { background: #fff; }
   .lp .pay__peak::before { left: -39px; top: 26px; }
 }
 .lp .pay__peak b small { font-size: .36em; font-weight: 600; letter-spacing: 0; margin-right: .12em; vertical-align: .9em; }
+/* Home hero: the card scene is shorter, so the client logos show in the first screen. */
+.lp .scene { height: clamp(320px, min(34vw, 50vh), 480px); }
