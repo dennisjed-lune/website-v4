@@ -36,7 +36,7 @@ def page(slug, title, desc, body):
     nav = "".join(f'<a href="{h}"{cur if h == slug else ""}>{t}</a>' for h, t in NAV)
     home = slug == "index.html"   # the home page is the landing design (landing_body.html, landing.css, landing.js)
     extra_head = '\n<link rel="stylesheet" href="landing.css">' if home else ""
-    extra_js = '\n<script src="landing.js"></script>' if home else '\n<script src="pages.js"></script>'
+    extra_js = '\n<script src="moon-gl.js"></script>\n<script src="landing.js"></script>' if home else '\n<script src="pages.js"></script>'
     return f"""<!DOCTYPE html>
 <html lang="en"{" data-review" if REVIEW else ""}>
 <head>
@@ -288,7 +288,7 @@ PROBLEM = '''
 
 AI = f"""<section class="sec sec--white" id="ai"><div class="wrap chapter__grid">
 <div class="feature__copy chapter__copy"><h2 style="font-size:clamp(28px,3vw,44px)">Customers ask about their money. <span class="serif">The assistant answers.</span></h2>
-<p class="lead">A conversational assistant runs inside Expenses and Cashflow. It answers from the customer's enriched transactions.</p>
+<p class="lead">The AI assistant is its own module in the Lune mobile SDK. It answers from the customer's enriched transactions.</p>
 <div class="kv"><div><b>Plain questions</b><span>Customers ask in their own words</span></div><div><b>Real answers</b><span>Merchant names and categories from Enrich</span></div><div><b>Pulse offers</b><span>An offer that matches the customer's spend</span></div></div>
 <div class="chapter__links"><a class="more" href="ai.html">See the AI assistant →</a></div></div>
 {AI_DEMO}</div></section>"""
@@ -639,14 +639,14 @@ CONTACT = f"""{hero("Contact sales", 'Talk to our sales team about <span class="
 """
 
 AI_PAGE = f"""{hero("AI assistant", 'Customers ask about their money. <span class="serif">The assistant answers.</span>',
- "A conversational assistant runs inside Expenses and Cashflow in your app. It answers from the customer's enriched transactions and shows Pulse offers that match their spend.", BTN_TALK + BTN_SDK, AI_DEMO)}
+ "The AI assistant is its own module in the Lune mobile SDK. It answers from the customer's enriched transactions and shows Pulse offers that match their spend.", BTN_TALK + BTN_SDK, AI_DEMO)}
 
 {sec(head("What customers ask", "Each question gets an answer from real payments.", "Four example questions.") + f'''
 <div class="snips">{SNIPS}</div>''', "sec--white")}
 
 {sec(head("For your bank", "The assistant uses products your bank controls.") + f'''
 <div class="cols cols--4">
-{card("", "In your app", "The assistant runs in the Lune SDK, inside Expenses and Cashflow. It uses your colours.")}
+{card("", "In your app", "The assistant is a separate module in the Lune mobile SDK. It uses your colours.")}
 {card("", "The customer's own data", "Each answer comes from that customer's enriched transactions.")}
 {card("", "Offers you approve", "The assistant shows Pulse offers. Your bank approves each offer.")}
 {card("", "Merchant-funded rewards", "The merchant funds each reward. Your bank uses no rewards budget.")}
@@ -662,7 +662,7 @@ PAGES = [
     ("expenses.html", "Expenses | Spending screens for your app | Lune", "Expenses adds ready spending screens to your iOS and Android app.", EXPENSES),
     ("cashflow.html", "Cashflow | Money in against money out | Lune", "Cashflow adds ready screens to your iOS and Android app.", CASHFLOW),
     ("pulse.html", "Pulse | Merchant-funded rewards under your bank's name | Lune", "Pulse is a rewards programme for your customers. Merchants fund the offers. Your bank approves them.", PULSE),
-    ("ai.html", "AI assistant | Lune", "A conversational assistant inside Expenses and Cashflow. It answers from enriched transactions and shows Pulse offers that match spend.", AI_PAGE),
+    ("ai.html", "AI assistant | Lune", "An AI assistant module in the Lune mobile SDK. It answers from enriched transactions and shows Pulse offers that match spend.", AI_PAGE),
     ("customers.html", "Customers | Banks and fintechs on Lune", "Case studies from ADIB, D360 Bank, National Bank of Fujairah, Beyon Money and Alaan.", CUSTOMERS),
     ("contact.html", "Contact sales | Lune", "Talk to the Lune sales team about a live demo.", CONTACT),
 ]
