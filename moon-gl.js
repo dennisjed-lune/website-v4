@@ -30,11 +30,15 @@ void main(){
   float edge = 1.0 - smoothstep(1.0 - 1.6*uPx, 1.0, r);        // anti-aliased disc
   if (edge <= 0.0) { gl_FragColor = vec4(0.0); return; }
   vec3 n = vec3(uv.x, uv.y, sqrt(max(0.0, 1.0 - r*r)));
-  float th = 3.14159265 * (1.0 - uPhase);
-  // light from the lower right, like the crescent in the logo
-  vec3 L = normalize(vec3(sin(th), -0.38, cos(th)));
+  // The crescent is drawn the way the logo mark draws it: the disc minus a shadow circle that sits up and to the left.
+  // As the phase grows, the shadow circle slides away and more of the disc is lit. Phase 0.05 gives a thin crescent.
+  vec2 dir = normalize(vec2(1.0, -1.0));                        // lit side: lower right
+  float off = 0.13 + 2.2 * pow(uPhase, 1.35);
+  float dist = length(uv + dir * off);
+  float lit = smoothstep(1.0 - 0.05, 1.0 + 0.12, dist);
+  // light for the shading inside the lit part
+  vec3 L = normalize(vec3(dir * 0.75, 0.66));
   float d = dot(n, L);
-  float lit = smoothstep(-0.18, 0.5, d);                        // soft edge between light and shade
   // surface: a very faint shimmer that follows the scroll
   float sh = noise(n.xy*3.2 + vec2(uShift*0.35, -uShift*0.2)) * 0.6 + noise(n.xy*7.0 - vec2(uShift*0.2, 0.0)) * 0.4;
   float tone = clamp(d*0.5 + 0.5 + (sh - 0.5)*0.05, 0.0, 1.0);

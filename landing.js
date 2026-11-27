@@ -15,7 +15,7 @@ const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
 const easeOut=t=>1-Math.pow(1-t,3);
 // [scroll, x, y, radius, phase]. Scroll is in window heights from the top of the journey.
 // The intake step (scroll 0.9 to 2.1) sits between the problem and the product overview: the moon moves to the centre and grows while descriptions go in.
-const KEYS=[[-1,.74,.5,.05,.2],[0.3,.74,.5,.075,.22],[0.75,.74,.5,.08,.25],[1.25,.5,.58,.13,.32],[1.95,.5,.58,.175,.42],[2.6,.82,.3,.1,.42],[3.85,.72,.52,.17,.5],[5.05,.28,.5,.22,.62],[6.25,.72,.52,.27,.82],[7.45,.28,.5,.31,1],[8.0,.5,.5,.3,1],[8.75,.5,.5,.62,1]];
+const KEYS=[[-1,.74,.5,.05,.05],[0.3,.74,.5,.075,.06],[0.75,.74,.5,.08,.08],[1.25,.5,.58,.13,.12],[1.95,.5,.58,.175,.18],[2.6,.82,.3,.1,.24],[3.85,.72,.52,.17,.36],[5.05,.28,.5,.22,.56],[6.25,.72,.52,.27,.8],[7.45,.28,.5,.31,1],[8.0,.5,.5,.3,1],[8.75,.5,.5,.62,1]];
 const CH=[{c:3.85,t:'Enrich'},{c:5.05,t:'Analytics'},{c:6.25,t:'PFM'},{c:7.45,t:'Pulse'}];
 const END=8.55;          // the header comes back and the journey ends after this point
 const PORTAL=[7.85,8.7]; // the mint circle grows over this range
