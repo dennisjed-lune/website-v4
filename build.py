@@ -378,7 +378,7 @@ CATEGORY_MORE = f'''
 
 
 ANALYTICS = f"""{hero("Analytics", 'See where your customers spend, <span class="serif">by merchant and category.</span>',
- "Analytics shows spend by merchant, category and customer from your enriched transactions. Your teams get answers without a data request.", BTN_TALK, ANALYTICS_DEMO)}
+ "Analytics shows spend by merchant, category and customer from your AI-enriched transactions. Your teams get answers without a data request.", BTN_TALK, ANALYTICS_DEMO)}
 
 {sec(feature("Overview", "See your card base and enriched volume at a glance.", "The Overview is the first screen in LuneHub. It shows how many cardholders transact and how many transactions Lune enriched.",
  [("Cardholders with transactions", "for the period you select."), ("Enriched transactions", "against the volume in your plan."), ("Transactions by date", "day by day, for the last month.")],
@@ -408,11 +408,12 @@ BTN_SDK = f'<a class="btn btn--ghost" href="{DOCS_SDK}" target="_blank" rel="noo
 IN_APP = f'''<div class="cols">
 {card("", "Your look", "Your colours, light and dark mode, and your currency.")}
 {card("", "Two platforms", "Native SDKs for iOS and Android.")}
-{card("", "Enriched by default", "Each transaction shows the merchant name, logo and category from Lune Enrich.")}
+{card("", "Enriched by AI", "Each transaction shows the merchant name, logo and category from AI-assisted Lune Enrich.")}
+{card("", "AI assistant", "A separate module in the same SDK. Customers ask about their money in their own words.")}
 </div>'''
 
 EXPENSES = f"""{hero("Expenses", 'Show customers where <span class="serif">their money goes.</span>',
- "Expenses adds ready spending screens to your iOS and Android app. Customers see spend by category and merchant, with real merchant names.", BTN_TALK + BTN_SDK, phones_demo("exp"))}
+ "Expenses adds ready spending screens to your iOS and Android app. Customers see spend by merchant and category. The AI assistant answers their questions about it.", BTN_TALK + BTN_SDK, phones_demo("exp"))}
 
 {sec(head("Expenses screens", "Payments show real merchant names and categories.") + f'''
 <div class="phones">
@@ -444,7 +445,7 @@ EXPENSES = f"""{hero("Expenses", 'Show customers where <span class="serif">their
 """
 
 CASHFLOW = f"""{hero("Cashflow", 'Show customers money in <span class="serif">against money out.</span>',
- "Cashflow adds ready screens to your iOS and Android app. Customers compare money in with money out and follow the trend.", BTN_TALK + BTN_SDK, phones_demo("cf"))}
+ "Cashflow adds ready screens to your iOS and Android app. Customers compare money in with money out. The AI assistant answers their questions about it.", BTN_TALK + BTN_SDK, phones_demo("cf"))}
 
 {sec(head("Cashflow screens", "Customers compare money in with money out.") + f'''
 <div class="phones">
@@ -599,7 +600,7 @@ def study(s):
 
 
 CUSTOMERS = f"""{hero("Customers", 'Banks and fintechs that <span class="serif">run on Lune data.</span>',
- "Retail banks, digital banks and fintechs in the UAE, Saudi Arabia and Bahrain use Lune. Their transactions are clear to customers and to their teams.", BTN_TALK)}
+ "Retail banks, digital banks and fintechs in the UAE, Saudi Arabia and Bahrain use Lune. AI-assisted enrichment makes their transactions clear to customers and to their teams.", BTN_TALK)}
 <section><div class="wrap">{logos().replace('<div class="wrap logos">', '<div class="logos" style="margin-top:0">')}</div></section>
 {sec(head("Case studies", "Five clients. One result: clear transactions.") + '<div class="stack" style="gap:20px">' + "".join(study(s) for s in STUDIES) + "</div>" + stats())}
 {cta("Your bank can be the next case study.", "Contact sales for a live demo on sample data, then on a sample of your own transactions.")}
@@ -658,9 +659,9 @@ AI_PAGE = f"""{hero("AI assistant", 'Customers ask about their money. <span clas
 PAGES = [
     ("index.html", "Lune | More card revenue from every transaction", "Lune turns the card transactions you already process into new revenue. Know where your customers spend, and let merchants pay to reach them.", HOME),
     ("enrich.html", "Enrich | Real-time transaction enrichment API | Lune", "Enrich returns the merchant, logo and category for each card transaction as it happens.", ENRICH),
-    ("analytics.html", "Analytics | Spend by merchant and category | Lune", "Analytics shows spend by merchant, category and customer from your enriched transactions.", ANALYTICS),
-    ("expenses.html", "Expenses | Spending screens for your app | Lune", "Expenses adds ready spending screens to your iOS and Android app.", EXPENSES),
-    ("cashflow.html", "Cashflow | Money in against money out | Lune", "Cashflow adds ready screens to your iOS and Android app.", CASHFLOW),
+    ("analytics.html", "Analytics | Spend by merchant and category | Lune", "Analytics shows spend by merchant, category and customer from your AI-enriched transactions.", ANALYTICS),
+    ("expenses.html", "Expenses | Spending screens for your app | Lune", "Expenses adds ready spending screens to your iOS and Android app, with an AI assistant module.", EXPENSES),
+    ("cashflow.html", "Cashflow | Money in against money out | Lune", "Cashflow adds ready screens to your iOS and Android app, with an AI assistant module.", CASHFLOW),
     ("pulse.html", "Pulse | Merchant-funded rewards under your bank's name | Lune", "Pulse is a rewards programme for your customers. Merchants fund the offers. Your bank approves them.", PULSE),
     ("ai.html", "AI assistant | Lune", "An AI assistant module in the Lune mobile SDK. It answers from enriched transactions and shows Pulse offers that match spend.", AI_PAGE),
     ("customers.html", "Customers | Banks and fintechs on Lune", "Case studies from ADIB, D360 Bank, National Bank of Fujairah, Beyon Money and Alaan.", CUSTOMERS),
