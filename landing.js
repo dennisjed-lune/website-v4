@@ -211,7 +211,7 @@ class Landing {
       // A smooth moon: a pale mint disc, a lit side with a soft edge, a soft highlight and a thin rim.
       // When a description reaches the moon ("absorb"), the glow gets brighter and the moon swells a little. No hard strokes.
       const th=Math.PI*(1-ph);
-      const glow=0.12+0.22*ph+feed*0.2+0.32*absorb;
+      const glow=0.08+0.12*ph+feed*0.18+0.34*absorb;
       const hal=ctx.createRadialGradient(mx,my,R*0.85,mx,my,R*1.9);
       hal.addColorStop(0,`rgba(16,163,127,${Math.min(0.5,glow*0.5).toFixed(3)})`); hal.addColorStop(0.45,`rgba(16,163,127,${Math.min(0.2,glow*0.2).toFixed(3)})`); hal.addColorStop(1,'rgba(16,163,127,0)');
       ctx.fillStyle=hal; ctx.beginPath(); ctx.arc(mx,my,R*1.9,0,two); ctx.fill();
@@ -220,21 +220,21 @@ class Landing {
         const u=this.pearl.used;
         ctx.drawImage(sprite,0,sprite.height-u,u,u,mx-R,my-R,2*R,2*R);
       } else {
-      const hx=mx+R*0.38, hy=my-R*0.36;
+      const hx=mx+R*0.38, hy=my+R*0.36;
       ctx.save(); ctx.beginPath(); ctx.arc(mx,my,R,0,two); ctx.clip();
       // body: the dark side is a pale mint, not grey
       const body=ctx.createRadialGradient(mx-R*0.25,my-R*0.3,R*0.1,mx,my,R*1.05);
-      body.addColorStop(0,'#E9F6EF'); body.addColorStop(0.65,'#CBE8DA'); body.addColorStop(1,'#A6D6C1');
+      body.addColorStop(0,'#0B3D37'); body.addColorStop(0.65,'#002E2A'); body.addColorStop(1,'#00221F');
       ctx.fillStyle=body; ctx.fillRect(mx-R,my-R,2*R,2*R);
       // lit side: its edge is blurred, so light turns into shade without a line
       const lit=ctx.createRadialGradient(hx,hy,R*0.04,mx,my,R*1.1);
-      lit.addColorStop(0,'#F6FFF9'); lit.addColorStop(0.28,'#BDF4CB'); lit.addColorStop(0.7,'#4DC29A'); lit.addColorStop(1,'#16A37F');
+      lit.addColorStop(0,'#6FB3AC'); lit.addColorStop(0.35,'#469A93'); lit.addColorStop(1,'#0A634D');
       if('filter' in ctx) ctx.filter=`blur(${Math.min(18,Math.max(2,R*0.07)).toFixed(1)}px)`;
       ctx.fillStyle=lit; this.litPath(ctx,mx,my,R,th); ctx.fill();
       if('filter' in ctx) ctx.filter='none';
       // soft highlight
       const sp=ctx.createRadialGradient(hx,hy,0,hx,hy,R*0.7);
-      sp.addColorStop(0,'rgba(255,255,255,0.55)'); sp.addColorStop(0.5,'rgba(255,255,255,0.12)'); sp.addColorStop(1,'rgba(255,255,255,0)');
+      sp.addColorStop(0,'rgba(153,242,172,0.18)'); sp.addColorStop(0.5,'rgba(153,242,172,0.05)'); sp.addColorStop(1,'rgba(255,255,255,0)');
       ctx.fillStyle=sp; ctx.fillRect(mx-R,my-R,2*R,2*R);
       // inner shade at the edge gives the disc volume
       const edge=ctx.createRadialGradient(mx,my,R*0.78,mx,my,R);

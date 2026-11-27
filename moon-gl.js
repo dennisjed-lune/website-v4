@@ -15,11 +15,11 @@ const FRAG = `
 precision highp float;
 varying vec2 uv;
 uniform float uPhase, uAbsorb, uShift, uPx;
-// Lune palette, from ds/tokens/colors.css
-const vec3 SHADE = vec3(0.835, 0.925, 0.886);  // pale mint, the dark side
-const vec3 DEEP  = vec3(0.086, 0.639, 0.498);  // #16A37F emerald
-const vec3 MID   = vec3(0.600, 0.949, 0.675);  // #99F2AC mint
-const vec3 PEARL = vec3(0.965, 1.000, 0.976);  // #F6FFF9
+// Colours of the Lune logo mark: a deep teal disc with a muted sea-green crescent (img/lune-logo.svg).
+const vec3 SHADE = vec3(0.000, 0.180, 0.165);  // #002E2A lune-teal, the disc
+const vec3 DEEP  = vec3(0.039, 0.388, 0.302);  // #0A634D teal-700
+const vec3 CRES  = vec3(0.275, 0.604, 0.576);  // #469A93 the crescent in the logo
+const vec3 GLOW  = vec3(0.063, 0.639, 0.498);  // #10A37F emerald, only while descriptions go in
 float hash(vec2 q){ return fract(sin(dot(q, vec2(127.1, 311.7))) * 43758.5453); }
 float noise(vec2 q){
   vec2 i = floor(q), f = fract(q); f = f*f*(3.0-2.0*f);
@@ -31,23 +31,23 @@ void main(){
   if (edge <= 0.0) { gl_FragColor = vec4(0.0); return; }
   vec3 n = vec3(uv.x, uv.y, sqrt(max(0.0, 1.0 - r*r)));
   float th = 3.14159265 * (1.0 - uPhase);
-  vec3 L = normalize(vec3(sin(th), 0.28, cos(th)));
+  // light from the lower right, like the crescent in the logo
+  vec3 L = normalize(vec3(sin(th), -0.38, cos(th)));
   float d = dot(n, L);
-  float lit = smoothstep(-0.22, 0.42, d);                       // soft edge between light and shade
+  float lit = smoothstep(-0.18, 0.5, d);                        // soft edge between light and shade
   // surface: a very faint shimmer that follows the scroll
   float sh = noise(n.xy*3.2 + vec2(uShift*0.35, -uShift*0.2)) * 0.6 + noise(n.xy*7.0 - vec2(uShift*0.2, 0.0)) * 0.4;
-  float tone = clamp(d*0.5 + 0.5 + (sh - 0.5)*0.06, 0.0, 1.0);
-  vec3 litCol = mix(DEEP, MID, smoothstep(0.15, 0.65, tone));
-  litCol = mix(litCol, PEARL, smoothstep(0.62, 0.98, tone));
+  float tone = clamp(d*0.5 + 0.5 + (sh - 0.5)*0.05, 0.0, 1.0);
+  vec3 litCol = mix(DEEP, CRES, smoothstep(0.35, 0.85, tone));
   vec3 col = mix(SHADE, litCol, lit);
-  col *= 0.9 + 0.1*n.z;                                         // gentle limb darkening
-  // highlight
+  // a quiet sheen on the dark side, so the disc reads as a sphere and not a flat circle
+  col += vec3(0.06, 0.14, 0.13) * pow(max(0.0, dot(n, normalize(vec3(-0.5, 0.6, 0.65)))), 6.0) * (1.0 - lit);
+  // soft highlight on the crescent
   vec3 h = normalize(L + vec3(0.0, 0.0, 1.0));
-  col += vec3(1.0) * pow(max(dot(n, h), 0.0), 18.0) * 0.26 * lit;   // broad, soft highlight
-  // inner mint glow at the rim; brighter while descriptions go in
-  float fres = pow(1.0 - n.z, 2.2);
-  col = mix(col, MID, fres * (0.22 + 0.5*uAbsorb));
-  col += MID * fres * 0.35 * uAbsorb;
+  col += CRES * pow(max(dot(n, h), 0.0), 22.0) * 0.35 * lit;
+  // rim: the crescent colour at rest, emerald while descriptions go in
+  float fres = pow(1.0 - n.z, 2.4);
+  col = mix(col, mix(CRES, GLOW, uAbsorb), fres * (0.18 + 0.45*uAbsorb));
   gl_FragColor = vec4(col * edge, edge);                        // premultiplied alpha
 }`;
 
